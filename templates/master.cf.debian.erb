@@ -46,6 +46,8 @@ virtual   unix  -       n       n       -       -       virtual
 lmtp      unix  -       -       -       -       -       lmtp
 anvil     unix  -       -       -       -       1       anvil
 scache	  unix	-	-	-	-	1	scache
+retry     unix  -       -       n       -       -       error
+proxywrite unix -       -       n       -       1       proxymap
 #
 # ====================================================================
 # Interfaces to non-Postfix software. Be sure to examine the manual
