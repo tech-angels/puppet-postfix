@@ -49,7 +49,7 @@ class postfix {
   package { "mailx":
     ensure => installed,
     name   => $lsbdistcodename ? {
-      "squeeze" => "bsd-mailx",
+      /squeeze|wheezy/ => "bsd-mailx",
       "lucid"   => "bsd-mailx",
       default   => "mailx",
     },
