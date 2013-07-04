@@ -33,6 +33,7 @@ trace     unix  -       -       -       -       0       bounce
 verify    unix  -       -       -       -       1       verify
 flush     unix  n       -       -       1000?   0       flush
 proxymap  unix  -       -       n       -       -       proxymap
+proxywrite unix -       -       n       -       1       proxymap
 smtp      unix  -       -       -       -       -       smtp
 # When relaying mail as backup MX, disable fallback_relay to avoid MX loops
 relay     unix  -       -       -       -       -       smtp
@@ -40,14 +41,13 @@ relay     unix  -       -       -       -       -       smtp
 #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 showq     unix  n       -       -       -       -       showq
 error     unix  -       -       -       -       -       error
+retry     unix  -       -       -       -       -       error
 discard   unix  -       -       -       -       -       discard
 local     unix  -       n       n       -       -       local
 virtual   unix  -       n       n       -       -       virtual
 lmtp      unix  -       -       -       -       -       lmtp
 anvil     unix  -       -       -       -       1       anvil
 scache	  unix	-	-	-	-	1	scache
-retry     unix  -       -       n       -       -       error
-proxywrite unix -       -       n       -       1       proxymap
 #
 # ====================================================================
 # Interfaces to non-Postfix software. Be sure to examine the manual
