@@ -50,7 +50,7 @@ class postfix {
     ensure => installed,
     name   => $lsbdistcodename ? {
       /squeeze|wheezy/ => "bsd-mailx",
-      "lucid"   => "bsd-mailx",
+      /lucid|precise/  => "bsd-mailx",
       default   => "mailx",
     },
   }
