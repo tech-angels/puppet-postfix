@@ -7,10 +7,10 @@
 # service type  private unpriv  chroot  wakeup  maxproc command + args
 #               (yes)   (yes)   (yes)   (never) (100)
 # ==========================================================================
-<% if postfix_smtp_listen == 'all' -%>
+<% if @postfix_smtp_listen == 'all' -%>
 smtp      inet  n       -       -       -       -       smtpd
 <% else -%>
-<%= postfix_smtp_listen %>:smtp      inet  n       -       -       -       -       smtpd
+<%= @postfix_smtp_listen %>:smtp      inet  n       -       -       -       -       smtpd
 <% end -%>
 #submission inet n       -       -       -       -       smtpd
 #  -o smtpd_enforce_tls=yes
