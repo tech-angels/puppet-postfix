@@ -56,7 +56,11 @@ virtual   unix  -       n       n       -       -       virtual
 lmtp      unix  -       -       -       -       -       lmtp
 anvil     unix  -       -       -       -       1       anvil
 scache	  unix	-	-	-	-	1	scache
-#
+slow      unix  -       -       n       -       5       smtp
+  -o syslog_name=postfix-slow
+  -o smtp_destination_concurrency_limit=3
+  -o slow_destination_rate_delay=1
+
 # ====================================================================
 # Interfaces to non-Postfix software. Be sure to examine the manual
 # pages of the non-Postfix software to find out what options it wants.
